@@ -5,6 +5,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from django.conf import settings
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -19,12 +20,21 @@ class GoogleSheetsHandler:
     
     def __init__(self):
         """Initialize Google Sheets client"""
+        self.client = None
+        self.credentials_file = settings.GOOGLE_CREDENTIALS_FILE
+        
+        # Check if credentials file exists
+        if not os.path.exists(self.credentials_file):
+            logger.warning(f"Google Sheets credentials file not found at {self.credentials_file}. Google Sheets integration disabled.")
+            return
+        
         try:
             creds = Credentials.from_service_account_file(
-                settings.GOOGLE_CREDENTIALS_FILE,
+                self.credentials_file,
                 scopes=self.SCOPES
             )
             self.client = gspread.authorize(creds)
+            logger.info("Google Sheets client initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Google Sheets: {e}")
             self.client = None
