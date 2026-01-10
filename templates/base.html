@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bachata Classes Booking{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{% url 'index' %}" class="brand-link" aria-label="Home - Bachata Dance Studio"><h1>💃 Bachata Dance Studio</h1></a>
+            </div>
+            <ul class="nav-links" role="list">
+                <li><a href="{% url 'book' %}" {% if request.resolver_match.url_name == 'book' %}class="active"{% endif %}>Book a Class</a></li>
+                <li><a href="{% url 'my_bookings' %}" {% if request.resolver_match.url_name == 'my_bookings' %}class="active"{% endif %}>My Bookings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" aria-label="Main content">
+        {% if messages %}
+            <div class="container" role="alert" aria-live="polite">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                        <button class="close-alert" onclick="this.parentElement.remove()" aria-label="Close message">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer role="contentinfo" aria-label="Site footer">
+        <div class="container">
+            <p>&copy; 2026 Bachata Dance Studio. All rights reserved.</p>
+            <p>Monday, Wednesday, Friday | 6:30 PM - 9:30 PM</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

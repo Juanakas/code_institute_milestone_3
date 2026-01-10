@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Bachata Classes Booking{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1>Welcome to Bachata Dance Studio</h1>
+        <p class="hero-subtitle">Book your dance class for 2026</p>
+        <p class="hero-description">
+            Learn Bachata with professional instructors. Classes available every Monday, Wednesday, and Friday.
+        </p>
+        <a href="{% url 'book' %}" class="btn btn-primary btn-large">Book a Class Now</a>
+    </div>
+</div>
+
+<div class="container">
+    <section class="class-info">
+        <h2>Class Schedule</h2>
+        <div class="schedule-grid">
+            <div class="schedule-card beginner">
+                <div class="level-badge">Beginner</div>
+                <h3>6:30 PM - 7:30 PM</h3>
+                <p>Perfect for those starting their Bachata journey. Learn the basics and fundamental steps.</p>
+            </div>
+            <div class="schedule-card intermediate">
+                <div class="level-badge">Intermediate</div>
+                <h3>7:30 PM - 8:30 PM</h3>
+                <p>Build on your foundation with more complex moves and patterns.</p>
+            </div>
+            <div class="schedule-card advanced">
+                <div class="level-badge">Advanced</div>
+                <h3>8:30 PM - 9:30 PM</h3>
+                <p>Master advanced techniques, styling, and intricate choreography.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Select Date</h3>
+                <p>Choose a Monday, Wednesday, or Friday in 2026</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Pick Your Level</h3>
+                <p>Select beginner, intermediate, or advanced</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Book Your Spot</h3>
+                <p>Fill in your details and confirm your booking</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Dance!</h3>
+                <p>Show up and enjoy your class</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Dance?</h2>
+        <p>Join us for an exciting Bachata experience!</p>
+        <a href="{% url 'book' %}" class="btn btn-primary btn-large">Book Your First Class</a>
+    </section>
+
+    <footer class="instructor-footer">
+        <h2>Instructor: Juan Guerrero</h2>
+    </footer>
+</div>
+{% endblock %}

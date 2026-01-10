@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Booking Confirmed - Bachata Classes Booking{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="confirmation-container">
+        <div class="confirmation-icon">✓</div>
+        <h1>Booking Confirmed!</h1>
+        <p class="confirmation-message">
+            Your Bachata class has been successfully booked. We look forward to seeing you on the dance floor!
+        </p>
+        
+        <div class="confirmation-actions">
+            <a href="{% url 'my_bookings' %}" class="btn btn-primary">View My Bookings</a>
+            <a href="{% url 'book' %}" class="btn btn-secondary">Book Another Class</a>
+            <a href="{% url 'index' %}" class="btn btn-secondary">Back to Home</a>
+        </div>
+        
+        <div class="confirmation-info">
+            <h3>What to Bring:</h3>
+            <ul>
+                <li>Comfortable dance shoes or sneakers</li>
+                <li>Water bottle</li>
+                <li>Positive attitude and ready to dance!</li>
+            </ul>
+            
+            <h3>Need to Cancel?</h3>
+            <p>You can view and cancel your bookings from the "My Bookings" page.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .confirmation-container {
+        max-width: 600px;
+        margin: 50px auto;
+        text-align: center;
+        padding: 40px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .confirmation-icon {
+        width: 100px;
+        height: 100px;
+        background: #27ae60;
+        color: white;
+        font-size: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        animation: scaleIn 0.5s ease-out;
+    }
+    
+    @keyframes scaleIn {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    .confirmation-container h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+    
+    .confirmation-message {
+        font-size: 18px;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+    }
+    
+    .confirmation-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    
+    .confirmation-info {
+        text-align: left;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+    
+    .confirmation-info h3 {
+        color: #2c3e50;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .confirmation-info h3:first-child {
+        margin-top: 0;
+    }
+    
+    .confirmation-info ul {
+        padding-left: 20px;
+    }
+    
+    .confirmation-info li {
+        margin: 8px 0;
+        color: #555;
+    }
+</style>
+{% endblock %}
