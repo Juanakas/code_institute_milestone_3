@@ -2,6 +2,10 @@
 
 A Django web application for booking Bachata dance classes. Users can browse available class dates (Mon/Wed/Fri), book a levelled class, view their bookings, update details, or cancel if needed.
 
+**🌐 Live Deployment:** https://bachata-bookings-33037c444526.herokuapp.com/
+
+**📦 GitHub Repository:** https://github.com/Juanakas/code_institute_milestone_3
+
 <img src="screenshots/Homepage.jpeg" alt="Bachata Studio Homepage" width="600">
 
 ---
@@ -404,7 +408,7 @@ git push origin main
 - ✓ CRUD operations function properly
 - ✓ Google Sheets integration (if configured)
 
-**Live Site:** [Add your deployed URL here after deployment]
+**Live Site:** https://bachata-bookings-33037c444526.herokuapp.com/
 
 ---
 
